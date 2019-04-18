@@ -1,0 +1,245 @@
+@import "base/variables";
+@import "base/mixins";
+@import "base/typography";
+@import "vendor/normalize";
+@import "base/manifest";
+@import "components/sprite";
+body {
+    font-family: $font-text, Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    line-height: $fz + ($fz / 6);
+    font-size: $fz;
+    font-weight: 300;
+    color: #5B5B5B;
+}
+a{
+    text-decoration: underline;
+    color: $link-color;
+    @include trans(0.3);
+}
+a:hover{
+
+}
+
+
+header{
+    .top-menu{
+        min-height: 40px;
+        background:#F9F9F9;
+    }
+    .flex-top-header{
+        .city{
+            span{}
+            select{
+                border: none;
+                text-decoration: underline;
+                outline: none;
+                -webkit-appearance: none;
+               -moz-appearance: none;
+               appearance: none;
+               background:rgba(0,0,0,0);
+                option{
+                outline: none;
+                border: none;
+                -webkit-appearance: none;
+               -moz-appearance: none;
+               appearance: none;
+                }
+            }
+        }
+        nav{
+            ul{
+                margin: 0;
+                list-style: none;
+                li{
+                    margin: 0 17px;
+                    display: inline-block;
+                    a{
+                        color: $bk;
+                        text-decoration: none;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .lk{
+            margin-top: 10px;
+            ul{
+                list-style: none;
+                li{
+                    margin-left: 20px;
+                    display: inline-block;
+                    button{
+                        position: relative;
+                        border: none;
+                        background: none;
+                        padding-left: 18px;
+                        &.search-ico:before{
+                            @include sprite(4, 0, 11, 11, 0, -22);
+                        }
+                        &.in-ico:before{
+                            @include sprite(3, 0, 11, 11, 0, -11);
+                        }
+                        &.add-ico:before{
+                            @include sprite(3, 0, 11, 11, 0, 0);
+                        }
+                        &:hover{
+                            color: $link-color;
+                        }
+                    }
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .middle-menu{
+        margin: 30px 0;
+        .logotype{
+            a{
+                outline: none;
+                img{
+                    width: 172px;
+                    height: 77px;
+                }
+            }
+        }
+        .address{
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    margin: 0;
+                    list-style: none;
+                    line-height: 18px;
+                    a{
+                        text-decoration: none;
+                        font-size: 16px;
+                        position: relative;
+                        padding-left: 25px;
+                        color: $accent-color;
+                        font-weight: 500;
+                        &.ph-ico:before{
+                            @include sprite(2,0,14,14,0,-544);
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .backet{
+            .bask{
+                position: relative;
+                img{
+                    width: 36px;
+                    height: 36px;
+                    cursor: pointer;
+                    position: relative;
+                }
+                span{
+                    margin-left: 10px;
+                    position: relative;
+                    top: 4px;
+                    font-weight: 400;
+                    display: inline-block;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+                & strong{
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    background: $accent-color;
+                    border-radius: 50%;
+                    top: 11px;
+                    left: 6px;
+                    line-height: 25px;
+                    color: #fff;
+                    text-align: center;
+                    font-weight: 500;
+                }
+            }
+            .callback{
+                margin-top: 17px;
+                a{
+                    button{
+                        border: 2px solid $btn-color;
+                        background:none;
+                        box-sizing: border-box;
+                        border-radius: 15px;
+                        width: 160px;
+                        height: 30px;
+                        color: #000;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+    .bottom-menu{
+        .main-menu{
+            border-top: 1px solid #E2E2E2;
+            border-bottom: 1px solid #E2E2E2;
+            nav{
+                width: 100%;
+                margin: 13px 0;
+                text-align: center;
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    li{
+                        display: inline-block;
+                        margin: 0 20px;
+                        position: relative;
+                        a{
+                            text-align: center;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            color: #1C1C1C;
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+            .submenu {
+              position: absolute;
+                z-index: 5;
+                min-width: 250px;
+                width: 100%;
+                background: white;
+                border: 1px solid #CBCBCC;
+                visibility: hidden;
+                opacity: 0;
+                top: 29px;
+                transform-origin: 0% 0%;
+                transform: rotateX(-90deg);
+                transition: .3s linear;
+                li {
+                    position: relative;
+                    padding: 6px 0;
+                    a {
+                      color: #282828;
+                      padding: 15px 5px;
+                    }
+                }
+            }
+            nav li:hover > .submenu {
+              transform: rotateX(0deg);
+              visibility: visible;
+              opacity: 1;
+            }
+        }
+    }
+}
+
+
