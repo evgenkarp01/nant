@@ -133,7 +133,7 @@ input:focus, textarea:focus{
     h3{
         font-family: Proxima Nova;
         font-style: normal;
-        font-weight: normal;
+        font-weight: 500;
         font-size: $h3-fz;
         line-height: $h3-fz + ($h3-fz / 6);
         text-transform: uppercase;
@@ -174,7 +174,7 @@ input:focus, textarea:focus{
     button{
         border: 1px solid $btn-color;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 14px;
         max-width: 270px;
         height: 60px;
         font-weight: normal;
@@ -182,16 +182,18 @@ input:focus, textarea:focus{
         border-radius: 3px;
         width: 100%;
         background: none;
-        padding: 0 30px;
+        padding: 0 10px;
         @include trans(0.2);
         outline: none;
         color: $bk;
+        text-align: center;
         &:hover{
              background: $btn-color;
-
+             color: $wt;
         }
         &:active {
-            background: #b22126;
+            background: $accent-color;
+            border-color: $accent-color !important;
         }
     }
 }
