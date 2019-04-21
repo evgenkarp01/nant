@@ -39,6 +39,19 @@ header{
     }
     .flex-top-header{
         .city{
+            .mrk{
+                display: inline-block;
+                position: relative;
+                i{
+                    position: relative;
+                    &.build{
+                        @include sprite(-11, 0, 14, 14, 0, -25);
+                    }
+                }
+                span{
+                    /* display: none; */
+                }
+            }
             span{}
             select{
                 border: none;
@@ -48,12 +61,15 @@ header{
                -moz-appearance: none;
                appearance: none;
                background:rgba(0,0,0,0);
+                cursor: pointer;
                 option{
-                outline: none;
-                border: none;
-                -webkit-appearance: none;
-               -moz-appearance: none;
-               appearance: none;
+                    outline: none;
+                    border: none;
+                    -webkit-appearance: none;
+                   -moz-appearance: none;
+                   appearance: none;
+                    cursor: pointer;
+                    
                 }
             }
         }
@@ -67,8 +83,27 @@ header{
                     a{
                         color: $bk;
                         text-decoration: none;
+                        position: relative;
                         &:hover{
                             text-decoration: underline;
+                        }
+                        i{
+                            position: relative;
+                            &.about{
+                                @include sprite(-11, 0, 14, 14, 0, 0);
+                            }
+                            &.pay{
+                                @include sprite(-11, 0, 14, 14, 0, -88);
+                            }
+                            &.delivery{
+                                @include sprite(-11, 0, 14, 14, 0, -53);
+                            }
+                            &.contacts{
+                                @include sprite(-11, 0, 14, 14, 0, -39);
+                            }
+                        }
+                        span{
+                            /* display: none; */
                         }
                     }
                 }
@@ -81,19 +116,20 @@ header{
                 li{
                     margin-left: 20px;
                     display: inline-block;
+                    position: relative;
                     button{
                         position: relative;
                         border: none;
                         background: none;
                         padding-left: 18px;
                         &.search-ico:before{
-                            @include sprite(4, 0, 11, 11, 0, -22);
+                            @include sprite(4, 0, 11, 11, 0, -78);
                         }
                         &.in-ico:before{
-                            @include sprite(3, 0, 11, 11, 0, -11);
+                            @include sprite(3, 0, 11, 11, 0, -67);
                         }
                         &.add-ico:before{
-                            @include sprite(3, 0, 11, 11, 0, 0);
+                            @include sprite(3, 0, 11, 11, 0, -14);
                         }
                         &:hover{
                             color: $link-color;
@@ -101,6 +137,9 @@ header{
                     }
                     &:first-child{
                         margin-left: 0;
+                    }
+                    span{
+                        /* display: none; */
                     }
                 }
             }
@@ -133,7 +172,7 @@ header{
                         color: $accent-color;
                         font-weight: 500;
                         &.ph-ico:before{
-                            @include sprite(2,0,14,14,0,-544);
+                            @include sprite(2,0,14,14,0,-102);
                         }
                         &:hover{
                             text-decoration: underline;
@@ -193,6 +232,7 @@ header{
         .main-menu{
             border-top: 1px solid #E2E2E2;
             border-bottom: 1px solid #E2E2E2;
+            position: relative;
             nav{
                 width: 100%;
                 margin: 13px 0;
@@ -289,6 +329,7 @@ section{
                 top: calc(50% - 23px);
                 @include trans(0.4);
                 cursor: pointer;
+                z-index: 5;
                 &:hover{
                     transform: scale(1.15);
                 }
@@ -440,7 +481,7 @@ section{
                 color: #000000;
                 position: relative;
                 &:after{
-                    @include sprite(4,none,15,13,0,-60);
+                    @include sprite(4,none,15,13,0,-130);
                 }
             }
         }
@@ -458,7 +499,7 @@ section{
                 filter: contrast(0%);
                 text-decoration: line-through;
                 &:after{
-                    @include sprite(4,none,15,13,0,-60);
+                    @include sprite(4,none,15,13,0,-130);
                 }
             }
         }
@@ -473,7 +514,7 @@ section{
                 text-decoration: underline;
                 position: relative;
                 &:after{
-                    @include sprite(0,-20,18,18,0,-74);
+                    @include sprite(0,-20,18,18,0,-144);
                 }
             }
         }
@@ -520,7 +561,7 @@ footer{
                     position: relative;
                     padding-left: 20px;
                     &:before{
-                        @include sprite(1,0,14,14,0,-46);
+                        @include sprite(1,0,14,14,0,-116);
                     }
                 }
             }
@@ -570,7 +611,7 @@ footer{
         background:#E7E7E7;
     }
     .copyright{
-        
+        font-size: 12px;
         text-align: center;
         max-width: 1130px;
         padding: 20px 40px 0 40px;
@@ -584,3 +625,117 @@ footer{
         }
     }
 }
+
+
+
+
+
+
+#sandwich {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    margin: auto;
+    display: none;
+}
+.sw_top {
+    position: relative;
+    top: 0;
+    width: 50px;
+    height: 5px;
+    background: #000;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    transition: transform 0.5s, top 0.2s;
+    /* transition-delay: 0.2s, 0s; */
+}
+.sw_bottom {
+    position: relative;
+    width: 50px;
+    height: 5px;
+    top: 10px;
+    background: #000;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    transition: transform 0.5s, top 0.2s;
+    transition-delay: 0.2s, 0s;
+}
+.sw_footer {
+    position: relative;
+    width: 50px;
+    height: 5px;
+    top: 20px;
+    background: #000;
+    border: none;
+    border-radius: 4px 4px 4px 4px;
+    transition: all 0.5s;
+    transition-delay: 0.1s;
+}
+#sandwich.active .sw_footer {
+    opacity: 0;
+    top: 0;
+    transform: rotate(180deg);
+}
+#sandwich.active .sw_bottom {
+    top: 10px;
+    transform: rotate(-140deg);
+}
+#sandwich.active .sw_top {
+    top: 15px;
+    transform: rotate(140deg);
+}
+
+.sub__menu {
+    width: 100%;
+    display: table;
+    border-bottom: 1px solid #fff;
+    background: $accent-color;
+    z-index: 9999;
+    display: none;
+}
+.sub__menu ul {
+    display: table-row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sub__menu ul li {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    color: #FFF;
+    line-height: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-right: 1px solid #fff;
+}
+.sub__menu ul li ul {
+    display: none;
+    font-size: 18px;
+}
+.sub__menu ul li ul li a {
+    color: #C6C6C6 !important;
+    text-transform: none !important;
+    font-size: 16px !important;
+}
+.sub__menu ul li a, .sub__menu ul li span{
+    font-size: 18px !important;
+    text-decoration: none;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+

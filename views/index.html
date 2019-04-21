@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/media.css">
 	<link rel="shortcut icon"  href="favicon.ico">
 </head>
 <body>
@@ -21,7 +22,8 @@
                 <div class="row">
                     <div class="flex flex-top-header">
                         <div class="city">
-                            <span>Ваш город:</span>
+                           <div class="mrk"><i class="build hidden visible-xs"></i>
+                            <span class="hidden-xs">Ваш город:</span></div>
                             <select>
                               <option selected>Ростов-на-Дону</option>
                               <option>Краснодар</option>
@@ -30,22 +32,21 @@
                         </div>
                         <nav>
                             <ul>
-                                <li><a href="">О магазине</a></li>
-                                <li><a href="">Оплата</a></li>
-                                <li><a href="">Доставка</a></li>
-                                <li><a href="">Контакты</a></li>
+                                <li><a href=""><i class="about hidden visible-md visible-sm visible-xs"></i><span class="hidden visible-lg">О магазине</span></a></li>
+                                <li><a href=""><i class="pay hidden visible-md visible-sm visible-xs"></i><span class="hidden visible-lg">Оплата</span></a></li>
+                                <li><a href=""><i class="delivery hidden visible-md visible-sm visible-xs"></i><span class="hidden visible-lg">Доставка</span></a></li>
+                                <li><a href=""><i class="contacts hidden visible-md visible-sm visible-xs" ></i><span class="hidden visible-lg">Контакты</span></a></li>
                             </ul>
                         </nav>
                         <div class="lk">
                             <ul>
-                                <li><button class="search-ico">Поиск</button></li>
-                                <li><button class="in-ico">Войти</button></li>
-                                <li><button class="add-ico">Регистрация</button></li>
+                                <li><button class="search-ico"><span class="hidden-xs">Поиск</span></button></li>
+                                <li><button class="in-ico"><span class="hidden-xs">Войти</span></button></li>
+                                <li><button class="add-ico"><span class="hidden-xs">Регистрация</span></button></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
         <div class="middle-menu">
@@ -79,8 +80,13 @@
             <div class="container">
                 <div class="row">
                     <div class="main-menu">
+                       <div id="sandwich" class="">
+                            <div class="sw_top"></div>
+                            <div class="sw_bottom"></div>
+                            <div class="sw_footer"></div>
+                        </div>
                         <nav>
-                            <ul>
+                            <ul class="topmenu">
                                 <li><a href="">Главная</a></li>
                                 <li><a href="">Мебель</a></li>
                                 <li><a href="">Свет</a>
@@ -98,6 +104,31 @@
                                 <li><a href="">Акции</a></li>
                             </ul>
                         </nav>
+                        
+                        
+                        <div class="sub__menu">
+                            <ul class="">
+                                <li><a href="">Главная</a></li>
+                                <li><a href="">Мебель</a></li>
+                                <li>
+                                    <span>Свет</span>
+                                    <ul class="subm">
+                                        <li><a href="">меню третьего уровня</a></li>
+                                        <li><a href="">меню третьего уровня</a></li>
+                                        <li><a href="">меню третьего уровня</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Текстиль</a></li>
+                                <li><a href="">Декор</a></li>
+                                <li><a href="">Ароматы</a></li>
+                                <li><a href="">Посуда</a></li>
+                                <li><a href="">Новинки</a></li>
+                                <li><a href="">Акции</a></li>
+                            </ul>
+                            
+                        </div>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -339,14 +370,14 @@
             <div class="container">
                 <div class="row">
                     <div class="oplet-footer">
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="logo"><a href="/"><img src="img/logo.svg" alt=""></a></div>
                             <div class="rezhim">
                                 <p>Режим работы: 11.00-19.00 пн-пт</p>
                                 <p>Эл. почта: <a href="mailto:info@lavandadecor.ru">info@lavandadecor.ru</a></p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="ttl">
                                 <h3>Адреса магазинов:</h3>
                             </div>
@@ -366,7 +397,7 @@
                                 <p>ТРЦ «Рио», маг. А-23</p>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="ttl">
                                 <h3>Информация:</h3>
                             </div>
@@ -381,9 +412,9 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-sm-6 col-md-3">
                             <div class="ttl">
-                                <h3>Информация:</h3>
+                                <h3>Личный кабинет:</h3>
                             </div>
                             <nav class="lk_menu">
                                 <ul>
