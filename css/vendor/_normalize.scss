@@ -4,6 +4,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  height: 100%;
 }
 body {
   margin: 0;
@@ -77,6 +78,12 @@ input { /* 1 */
 button,
 select { /* 1 */
   text-transform: none;
+}
+button:active, button:focus {
+  outline: none !important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
 }
 button,
 [type="button"],

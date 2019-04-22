@@ -27,5 +27,31 @@ $( document ).ready(function() {
 
                 $(this).find("ul").toggle(500);	
         })
+        $(".ortby button").on("click", function(){
+            if(($(this).hasClass("nosort"))){
+                $(".ortby button").removeClass("active back");
+                $(this).addClass("active");
+            }
+            if(($(this).hasClass("active")) && (!($(this).hasClass("nosort")))){
+                $(".nosort").removeClass("active");
+                $(this).toggleClass("back");
+            }else {
+                $(".ortby button").removeClass("back");
+                if(!($(this).hasClass("nosort"))){
+                    $(".ortby button").removeClass("active");
+                    $(this).toggleClass("active");
+                }
 
+            }
+        })
+        $(".toggle-made").on("click", function(){
+            $(this).toggleClass("back");
+            $("#toggle-made").toggle();
+
+        });
+        $(".cost_f-toggle").on("click", function(){
+            $(this).toggleClass("back");
+            $("#range").toggle();
+
+        });
 })
