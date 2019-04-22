@@ -44,14 +44,41 @@ $( document ).ready(function() {
 
             }
         })
+    
         $(".toggle-made").on("click", function(){
             $(this).toggleClass("back");
-            $("#toggle-made").toggle();
+            $("#toggle-made").toggle(function() {
+               $(this).animate({}, 200);
+               },
+               function() {
+               $(this).animate({}, 200);
+            });
 
         });
         $(".cost_f-toggle").on("click", function(){
             $(this).toggleClass("back");
-            $("#range").toggle();
+            $("#range").toggle(function() {
+               $(this).animate({}, 300);
+               },
+               function() {
+               $(this).animate({}, 300);
+            });
 
+        });
+        $(".menu-cat-btn").on("click", function(){
+            $(".oplet-navbar").toggle(function() {
+               $(this).animate({}, 300);
+               },
+               function() {
+               $(this).animate({}, 300);
+            });
+        });
+        $(".btn-filter").on("click", function(){
+            $(".filter").toggle(function() {
+               $(this).animate({}, 300);
+               },
+               function() {
+               $(this).animate({}, 300);
+            });
         });
 })
